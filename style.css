@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    background-color: hsl(0, 0%, 10%);
+}
+
+header {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 100px;
+    padding-bottom: 30px;
+    background-color: hsl(0, 0%, 5%);
+    border-bottom: 10px dashed hsl(240, 88%, 46%);
+}
+
+header > div {
+    height: 90%;
+}
+
+header > div > img {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.cat {
+    border: 3px solid black;
+    width: 80%;
+    height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.cat:nth-child(odd) {
+  transform: translateX(-25px);
+}
+
+.cat:nth-child(even) {
+    transform: translateX(25px);
+}
+
+:root {
+  --vibrant-coral: #FF7E6B;    /* Warm coral (pops but not neon) */
+  --vibrant-teal: #2EC4B6;     /* Rich teal (deep but bright) */
+  --vibrant-lavender: #9B5DE5; /* Electric lavender (softened purple) */
+  --vibrant-mustard: #FFC857;  /* Golden mustard (vibrant but earthy) */
+  --vibrant-emerald: #3BB273;  /* Lush green (bright but natural) */
+  --vibrant-sky: #4CC9F0;      /* Bright sky blue (cheerful but not harsh) */
+  --vibrant-raspberry: #EF476F;/* Pink-red (bold but not aggressive) */
+  --vibrant-slime: #A7C957;    /* Lime green (punchy but organic) */
+  --vibrant-orange: #FF9F1C;   /* Zesty orange (energetic but warm) */
+  --vibrant-plum: #7B2CBF;     /* Deep purple (vibrant but moody) */
+}
+
+.cat:nth-child(10n+1)  { background-color: var(--vibrant-coral); }
+.cat:nth-child(10n+2)  { background: var(--vibrant-teal); }
+.cat:nth-child(10n+3)  { background: var(--vibrant-lavender); }
+.cat:nth-child(10n+4)  { background: var(--vibrant-mustard); }
+.cat:nth-child(10n+5)  { background: var(--vibrant-emerald); }
+.cat:nth-child(10n+6)  { background: var(--vibrant-sky); }
+.cat:nth-child(10n+7)  { background: var(--vibrant-raspberry); }
+.cat:nth-child(10n+8)  { background: var(--vibrant-slime); }
+.cat:nth-child(10n+9)  { background: var(--vibrant-orange); }
+.cat:nth-child(10n+10) { background: var(--vibrant-plum); }
+
+.cat > a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.cat:nth-child(even) > a {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.catImg {
+    height: 100%;
+    border-radius: 15px;
+}
+
+.catImg > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+}
