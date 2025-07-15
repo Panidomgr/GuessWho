@@ -17,6 +17,7 @@ header {
 
 header > div {
     height: 90%;
+    flex-shrink: 0;
 }
 
 header > div > img {
@@ -36,10 +37,11 @@ main {
 .cat {
     border: 3px solid black;
     width: 80%;
-    height: 100px;
+    min-height: 100px;
     box-sizing: border-box;
     padding: 10px;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .cat:nth-child(odd) {
@@ -86,6 +88,7 @@ main {
     color: black;
     font-size: 2em;
     font-weight: bold;
+    flex-wrap: wrap;
 }
 
 .cat:nth-child(even) > a {
@@ -94,12 +97,45 @@ main {
 }
 
 .catImg {
-    height: 100%;
+    max-height: 150px;
     border-radius: 15px;
+    flex-shrink: 0;
 }
 
 .catImg > img {
     height: 100%;
     width: 100%;
+    max-height: 150px;
     border-radius: 15px;
+}
+
+@media (max-width: 220px) {
+    .cat > a {
+        font-size: 1em;
+    }
+
+    .catImg {
+        max-height: 50px;
+    }
+
+    .catImg > img {
+        max-height: 50px;
+    }
+
+    header > div {
+        height: 40%;
+        flex-shrink: 0;
+    }
+
+    header > div > img {
+        height: 100%;
+    }
+
+    .cat:nth-child(odd) {
+        transform: translateX(0);
+    }
+
+    .cat:nth-child(even) {
+        transform: translateX(0);
+    }
 }
