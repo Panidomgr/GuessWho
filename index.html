@@ -1,144 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Guess Who? - Solo Simulator</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess Who</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="GuessWhoLogo.png">
 </head>
 <body>
-    <div class="container">
-        <div class="board">
-            <div class="card">
-                <img src="images/Sin Boy.jpeg" alt="Sin Boy">
-                <div class="x-overlay">X</div>
-                <div class="label">Sin Boy</div>
-            </div>
-            <div class="card">
-                <img src="images/Snik.jpeg" alt="Snik">
-                <div class="x-overlay">X</div>
-                <div class="label">Snik</div>
-            </div>
-            <div class="card">
-                <img src="images/Xersonisos.jpeg" alt="Xersonisos">
-                <div class="x-overlay">X</div>
-                <div class="label">Xersonisos</div>
-            </div>
-            <div class="card">
-                <img src="images/Shrek.jpeg" alt="Shrek">
-                <div class="x-overlay">X</div>
-                <div class="label">Shrek</div>
-            </div>
-            <div class="card">
-                <img src="images/Gopher.jpeg" alt="Gopher">
-                <div class="x-overlay">X</div>
-                <div class="label">Gopher</div>
-            </div>
-            <div class="card">
-                <img src="images/AMathos.jpeg" alt="AMathos">
-                <div class="x-overlay">X</div>
-                <div class="label">AMathos</div>
-            </div>
-            <div class="card">
-                <img src="images/Sano.jpeg" alt="Sano">
-                <div class="x-overlay">X</div>
-                <div class="label">Sano</div>
-            </div>
-            <div class="card">
-                <img src="images/Megumi Moro.jpeg" alt="Megumi Moro">
-                <div class="x-overlay">X</div>
-                <div class="label">Megumi Moro</div>
-            </div>
-            <div class="card">
-                <img src="images/Egg.jpeg" alt="Egg">
-                <div class="x-overlay">X</div>
-                <div class="label">Egg</div>
-            </div>
-            <div class="card">
-                <img src="images/Sans.jpeg" alt="Sans">
-                <div class="x-overlay">X</div>
-                <div class="label">Sans</div>
-            </div>
-            <div class="card">
-                <img src="images/Jimmys.jpeg" alt="Jimmys">
-                <div class="x-overlay">X</div>
-                <div class="label">Jimmys</div>
-            </div>
-            <div class="card">
-                <img src="images/Yugi.jpeg" alt="Yugi">
-                <div class="x-overlay">X</div>
-                <div class="label">Yugi</div>
-            </div>
-            <div class="card">
-                <img src="images/Pani.jpeg" alt="Pani">
-                <div class="x-overlay">X</div>
-                <div class="label">Pani</div>
-            </div>
-            <div class="card">
-                <img src="images/Pyrovolos.jpeg" alt="Pyrovolos">
-                <div class="x-overlay">X</div>
-                <div class="label">Pyrovolos</div>
-            </div>
-            <div class="card">
-                <img src="images/Sonic.jpeg" alt="Sonic">
-                <div class="x-overlay">X</div>
-                <div class="label">Sonic</div>
-            </div>
-            <div class="card">
-                <img src="images/Dora.jpeg" alt="Dora">
-                <div class="x-overlay">X</div>
-                <div class="label">Dora</div>
-            </div>
-            <div class="card">
-                <img src="images/Mix.jpeg" alt="Mix">
-                <div class="x-overlay">X</div>
-                <div class="label">Mix</div>
-            </div>
-            <div class="card">
-                <img src="images/Seto Kaiba.jpeg" alt="Seto Kaiba">
-                <div class="x-overlay">X</div>
-                <div class="label">Seto Kaiba</div>
-            </div>
-            <div class="card">
-                <img src="images/Peppa Pig.jpeg" alt="Peppa Pig">
-                <div class="x-overlay">X</div>
-                <div class="label">Peppa Pig</div>
-            </div>
-            <div class="card">
-                <img src="images/Xourdas.jpeg" alt="Xourdas">
-                <div class="x-overlay">X</div>
-                <div class="label">Xourdas</div>
-            </div>
-            <div class="card">
-                <img src="images/ChatGPT.jpeg" alt="ChatGPT">
-                <div class="x-overlay">X</div>
-                <div class="label">ChatGPT</div>
-            </div>
-            <div class="card">
-                <img src="images/Argyriadis.jpeg" alt="Argyriadis">
-                <div class="x-overlay">X</div>
-                <div class="label">Argyriadis</div>
-            </div>
-            <div class="card">
-                <img src="images/Player 456.jpeg" alt="Player 456">
-                <div class="x-overlay">X</div>
-                <div class="label">Player 456</div>
-            </div>
-            <div class="card">
-                <img src="images/AI SpiderMan.jpeg" alt="AI Spiderman">
-                <div class="x-overlay">X</div>
-                <div class="label">AI Spiderman</div>
-            </div>
+    <header>
+        <div>
+            <img src="GuessWhoLogo.png">
         </div>
-
-        <div class="chosen-area">
-            <div class="chosen" id="chosenCard">
-            <!-- The chosen character will appear here -->
-            </div>
-                <div id="chosenLabel">Placeholder Label</div>
-            <div class="hint">Click this box to select your character,<br>then click one from the board.</div>
+    </header>
+    <main>
+        <div class="cat">
+            <a target="_blank" href="categories\original.html">
+                <div class="catImg">
+                    <img src="OriginalCategoryLogo.jpeg">
+                </div>
+                <div class="catTitle">
+                    Original
+                </div>
+            </a>
         </div>
-    </div>
+        <div class="cat">
+            <a style="font-style: italic;">
+                <div class="catImg">
+                    <img src="GuessWhoLogo.png">
+                </div>
+                <div class="catTitle">
+                    More Categories Coming Soon
+                </div>
+            </a>
+        </div>
+    </main>
 </body>
 </html>
