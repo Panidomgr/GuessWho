@@ -428,24 +428,52 @@ body.loading .card:hover {
   box-shadow: 5px 5px 10px black !important;
 }
 
-/* Remove hover effects on touch devices */
-/* Mobile-specific fixes */
+/* Add this to your style.css */
+/* Mobile-specific fixes - CSS only solution */
 @media (hover: none) and (pointer: coarse) {
-  /* 1. Remove hover effects completely */
-  .card:hover, #spoilerButtonToggle:hover {
+  /* 1. Remove all hover effects completely */
+  .card:hover,
+  #spoilerButtonToggle:hover,
+  #startNewGame:hover,
+  .chosen:hover,
+  header > a:hover {
     transform: none !important;
-    box-shadow: 5px 5px 10px black !important;
+    box-shadow: none !important;
+    filter: none !important;
   }
   
-  /* 2. Force immediate toggle response */
-  .card {
-    -webkit-tap-highlight-color: transparent; /* Remove tap flash */
-    touch-action: manipulation; /* Optimize for touch */
+  /* 2. Add active states for touch feedback */
+  #spoilerButtonToggle:active,
+  #startNewGame:active,
+  .chosen:active,
+  .card:active {
+    transform: scale(0.95) !important;
+    opacity: 0.9;
   }
   
-  /* 3. Fix delayed toggle animation */
+  /* 3. Remove hover transitions for mobile */
+  .card,
+  #spoilerButtonToggle,
+  #startNewGame,
+  .chosen {
+    transition: transform 0.1s ease, opacity 0.1s ease !important;
+  }
+  
+  /* 4. Fix the toggle states */
   .card.toggled {
     transform: scale(0.85) !important;
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  }
+  
+  /* 5. Disable animations that might cause issues */
+  #spoilerButtonToggle.active,
+  #startNewGame.active,
+  .chosen.active {
+    animation: none !important;
+  }
+  
+  /* 6. Ensure buttons don't maintain active state visually */
+  #spoilerButtonToggle,
+  #startNewGame {
+    -webkit-tap-highlight-color: transparent;
   }
 }
