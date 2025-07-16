@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Guess Who? - Solo Simulator</title>
+    <title>Guess Who? - Original</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
+    <link rel="icon" type="image/png" href="./../../GuessWhoLogo.png">
 </head>
 <body>
+    <header>
+        <a target="_blank" href="./../../index.html" title="Original Category">
+            <div>
+                <img src="./../../GuessWhoLogo.png" style="aspect-ratio: 1366/803;">
+            </div>
+            <div style="font-size: 3em; font-weight:bolder; transform: translateY(-8px);">/</div>
+            <div>
+                <img src="./../../OriginalCategoryLogo.jpeg" style="aspect-ratio: 1/1; border-radius: 10px;">
+            </div>
+        </a>
+    </header>
     <div class="container">
         <div class="board">
             <div class="card">
@@ -133,11 +145,21 @@
         </div>
 
         <div class="chosen-area">
-            <div class="chosen" id="chosenCard">
-            <!-- The chosen character will appear here -->
+            <div id="chosenCardArea">
+                <div class="chosen" id="chosenCard">
+                    <img src="./../../GuessWhoLogo.png">
+                </div>
+                    <div id="chosenLabel">Placeholder Label</div>
+                <div class="hint">Click this box to select your character,<br>then click one from the board.</div>
             </div>
-                <div id="chosenLabel">Placeholder Label</div>
-            <div class="hint">Click this box to select your character,<br>then click one from the board.</div>
+            <div id="myButtons">
+                <div id="spoilerButtonToggle">
+                    Hide Your Guess!
+                </div>
+                <div id="startNewGame">
+                    Start New Game
+                </div>
+            </div>
         </div>
     </div>
 </body>
