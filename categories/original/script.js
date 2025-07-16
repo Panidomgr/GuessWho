@@ -46,6 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         saveGame();
       }
     });
+
+    card.addEventListener('touchstart', () => {
+      if (card.classList.contains('toggled')) {
+        card.style.transform = 'scale(0.85)';
+      }
+    }, { passive: true });
+
   });
 
   // Chosen card click handler
