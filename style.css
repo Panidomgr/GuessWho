@@ -1,481 +1,141 @@
 body {
-    font-family: sans-serif;
-    background: linear-gradient(20deg, hsl(0 0% 10%), hsl(0, 0%, 20%));
     margin: 0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    animation: fadeIn 1s ease-out;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+    background-color: hsl(0, 0%, 10%);
 }
 
 header {
-  height: 5vh;
-  padding: 10px;
-    margin-bottom: 20px;
-    background-color: hsl(0, 0%, 5%);
-    border-bottom: 10px dashed hsl(0, 0%, 0%);
+    height: 20vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+    padding: 10px;
+    margin-bottom: 100px;
+    padding-bottom: 30px;
+    background-color: hsl(0, 0%, 5%);
+    border-bottom: 10px dashed hsl(240, 88%, 46%);
 }
 
-header > a {
-  height: 100%;
-  width: 25%;  
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    text-decoration: none;
-    color: black;
-}
-
-header > a > div {
-    height: 100%;
+header > div {
+    height: 90%;
     flex-shrink: 0;
 }
 
-header > a > div > img {
+header > div > img {
     height: 100%;
 }
 
-.container {
+main {
     display: flex;
-    gap: 80px;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    margin-bottom: 100px;
-    margin-top: 20px;
-}
-
-.board {
-    display: grid;
-    grid-template-columns: repeat(6, 100px);
-    grid-gap: 50px;
-    margin: 10px;
-}
-
-@media (max-width: 975px) {
-    .board {
-        grid-template-columns: repeat(4, 100px);
-    }
-}
-
-@media (max-width: 700px) {
-    .board {
-        grid-template-columns: repeat(3, 100px);
-    }
-}
-
-@media (max-width: 550px) {
-    .board {
-        grid-template-columns: repeat(2, 100px);
-    }
-}
-
-@media (max-width: 380px) {
-    .board {
-        grid-template-columns: repeat(1, 100px);
-    }
-}
-
-.card {
-    width: 120px;
-    height: 160px;
-    position: relative;
-    cursor: pointer;
-    border: 2px solid #000000;
-    box-shadow: 5px 5px 10px black;
-    background-color: white;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    border-radius: 15px;
-    transition: 
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    animation: cardEntry 0.6s ease-out both;
-    animation-delay: calc(var(--order) * 0.1s);
-    opacity: 0; /* Start invisible */
-    transform: translateY(20px) rotate(5deg);
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 100px;
 }
 
-@keyframes cardEntry {
-  to {
-    opacity: 1;
-    transform: translateY(0) rotate(0);
-  }
+.cat {
+    border: 3px solid black;
+    width: 80%;
+    min-height: 100px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
-.card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    border-radius: 15px;
+.cat:nth-child(odd) {
+  transform: translateX(-25px);
 }
 
-.x-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+.cat:nth-child(even) {
+    transform: translateX(25px);
+}
+
+:root {
+  --vibrant-coral: #FF7E6B;    /* Warm coral (pops but not neon) */
+  --vibrant-teal: #2EC4B6;     /* Rich teal (deep but bright) */
+  --vibrant-lavender: #9B5DE5; /* Electric lavender (softened purple) */
+  --vibrant-mustard: #FFC857;  /* Golden mustard (vibrant but earthy) */
+  --vibrant-emerald: #3BB273;  /* Lush green (bright but natural) */
+  --vibrant-sky: #4CC9F0;      /* Bright sky blue (cheerful but not harsh) */
+  --vibrant-raspberry: #EF476F;/* Pink-red (bold but not aggressive) */
+  --vibrant-slime: #A7C957;    /* Lime green (punchy but organic) */
+  --vibrant-orange: #FF9F1C;   /* Zesty orange (energetic but warm) */
+  --vibrant-plum: #7B2CBF;     /* Deep purple (vibrant but moody) */
+}
+
+.cat:nth-child(10n+1)  { background-color: var(--vibrant-coral); }
+.cat:nth-child(10n+2)  { background: var(--vibrant-teal); }
+.cat:nth-child(10n+3)  { background: var(--vibrant-lavender); }
+.cat:nth-child(10n+4)  { background: var(--vibrant-mustard); }
+.cat:nth-child(10n+5)  { background: var(--vibrant-emerald); }
+.cat:nth-child(10n+6)  { background: var(--vibrant-sky); }
+.cat:nth-child(10n+7)  { background: var(--vibrant-raspberry); }
+.cat:nth-child(10n+8)  { background: var(--vibrant-slime); }
+.cat:nth-child(10n+9)  { background: var(--vibrant-orange); }
+.cat:nth-child(10n+10) { background: var(--vibrant-plum); }
+
+.cat > a {
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 0, 0, 0.4);
-    color: white;
-    font-size: 80px;
-    font-weight: bold;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    opacity: 0; /* Start invisible (replace visibility: hidden) */
-    transition: opacity 1s ease; /* Fade effect */
-    transform: scale(0.8);
-    transition: 
-        opacity 0.3s ease,
-        transform 0.3s ease,
-        background-color 0.3s ease;
-}
-
-.card.toggled .x-overlay {
-    opacity: 1;
-    transform: scale(1);
-    background-color: rgba(255, 50, 50, 0.6);
-}
-
-.card.toggled {
-    transform: scale(0.85) !important;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03) !important;
-  box-shadow: 
-    0 10px 20px rgba(0, 0, 0, 0.3),
-    0 0 15px rgba(255, 255, 255, 0.5);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-}
-
-.chosen-area {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
-    flex-direction: column;
-    margin: 10px;
-}
-
-@media (max-width: 1369px) {
-  .chosen-area {
-    align-items: flex-start;
-    gap: 50px;
     flex-direction: row;
-  }
-}
-
-.chosen-area > div#chosenCardArea {
-    display: flex;
-    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
-}
-
-.chosen {
-    width: 240px;
-    height: 280px;
-    border: 3px dashed #aaa;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    cursor: pointer;
-    transition: border 0.3s;
-    box-shadow: 5px 5px 5px black;
-    border-radius: 50px;
-}
-
-.chosen img {
-  transition: all 0.3s ease;
-}
-
-.chosen img[src*="GuessWhoLogo.png"] {
-  aspect-ratio: 1366/803;
-  width: 85%;
-  height: auto;
-  object-fit: contain;
-  overflow: visible;
-}
-
-.chosen img:not([src*="GuessWhoLogo.png"]) {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50px;
-  overflow: hidden;
-}
-
-.chosen.active {
-    border: 3px solid #3399ff;
-    box-shadow: 0 0 10px #3399ff;
-    border: 3px solid #3399ff;
-    box-shadow: 
-        0 0 15px #3399ff,
-        0 0 30px rgba(51, 153, 255, 0.5);
-    animation: pulseGlow 2s infinite;
-    transition: 
-        border 0.4s ease,
-        box-shadow 0.4s ease;
-}
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 15px #3399ff, 0 0 30px rgba(51, 153, 255, 0.5); }
-  50% { box-shadow: 0 0 25px #3399ff, 0 0 50px rgba(51, 153, 255, 0.8); }
-  100% { box-shadow: 0 0 15px #3399ff, 0 0 30px rgba(51, 153, 255, 0.5); }
-}
-
-.hint {
-    font-size: 1.2em;
-    color: hsl(0, 0%, 100%);
-}
-
-#chosenLabel {
-    font-size: 1.5em;
-    color: white;
-    text-shadow: 5px 5px 5px black;
-}
-
-#myButtons {
-  box-sizing: border-box;
-  height: auto;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-#spoilerButtonToggle {
-    border: 3px dotted hsl(129, 100%, 26%);
-    aspect-ratio: 2/1;
-    width: auto;
-    height: 50%;
+    gap: 50px;
+    text-decoration: none;
+    color: black;
     font-size: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: bold;
-    font-style: italic;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: hsl(141, 81%, 52%);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease, transform 0.2s ease;
-    z-index: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
 }
 
-#startNewGame {
-    border: 3px dotted hsl(244, 100%, 31%);
-    aspect-ratio: 2/1;
-    width: auto;
-    height: 50%;
-    font-size: 2em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-style: italic;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: hsl(213, 93%, 55%);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease, transform 0.2s ease;
-    z-index: 1;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.cat:nth-child(even) > a {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
 }
 
-#myButtons div::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 0.4s ease;
+.catImg {
+    max-height: 150px;
+    border-radius: 15px;
+    flex-shrink: 0;
 }
 
-#spoilerButtonToggle::before {
-  background: linear-gradient(45deg, 
-    hsl(125, 100%, 20%), 
-    hsl(125, 100%, 70%), 
-    hsl(125, 100%, 20%));
+.catImg > img {
+    height: 100%;
+    width: 100%;
+    max-height: 150px;
+    border-radius: 15px;
 }
 
-#startNewGame::before {
-  background: linear-gradient(45deg, 
-    hsl(175, 100%, 20%), 
-    hsl(175, 100%, 70%), 
-    hsl(175, 100%, 20%));
-}
+@media (max-width: 220px) {
+    .cat > a {
+        font-size: 1em;
+    }
 
-#myButtons div:hover {
-  transform: translateY(-3px);
-}
+    .catImg {
+        max-height: 50px;
+    }
 
-#spoilerButtonToggle:hover {
-  box-shadow: 0 10px 20px hsla(125, 100%, 50%, 0.5);
-}
+    .catImg > img {
+        max-height: 50px;
+    }
 
-#startNewGame:hover {
-  box-shadow: 0 10px 20px hsla(175, 100%, 50%, 0.5);
-}
+    header > div {
+        height: 40%;
+        flex-shrink: 0;
+    }
 
-#myButtons div:active {
-  transform: translateY(-1px) scale(0.98);
-}
+    header > div > img {
+        height: 100%;
+    }
 
-#myButtons div.active {
-  transform: scale(1.05);
-}
+    .cat:nth-child(odd) {
+        transform: translateX(0);
+    }
 
-#spoilerButtonToggle.active {
-  box-shadow: 
-    0 0 15px hsl(125, 100%, 50%),
-    0 0 30px hsl(125, 100%, 50%, 0.5);
-}
-
-#startNewGame.active {
-  box-shadow: 
-    0 0 15px hsl(175, 100%, 50%),
-    0 0 30px hsl(175, 100%, 50%, 0.5);
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-#spoilerButtonToggle.active::before {
-  opacity: 1;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-.spoiler{
-    filter: blur(3px);
-    transition: filter 0.3s ease;
-    user-select: none;
-}
-
-
-
-body.resetting {
-  cursor: wait !important;
-}
-
-body.resetting * {
-  pointer-events: none !important;
-  cursor: wait !important;
-}
-
-body.resetting .card:hover {
-  transform: none !important;
-  box-shadow: 5px 5px 10px black !important;
-}
-
-/* New Game button animation */
-@keyframes newGamePulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-#startNewGame.active::before {
-  opacity: 1;
-  animation: newGamePulse 1s infinite;
-}
-
-body.loading {
-  cursor: wait !important;
-}
-
-body.loading * {
-  pointer-events: none !important;
-  cursor: wait !important;
-}
-
-body.loading .card:hover {
-  transform: none !important;
-  box-shadow: 5px 5px 10px black !important;
-}
-
-/* Add this to your style.css */
-/* Mobile-specific fixes - CSS only solution */
-@media (hover: none) and (pointer: coarse) {
-  /* 1. Remove all hover effects completely */
-  .card:hover,
-  #spoilerButtonToggle:hover,
-  #startNewGame:hover,
-  .chosen:hover,
-  header > a:hover {
-    transform: none !important;
-    box-shadow: none !important;
-    filter: none !important;
-  }
-  
-  /* 2. Add active states for touch feedback */
-  #spoilerButtonToggle:active,
-  #startNewGame:active,
-  .chosen:active,
-  .card:active {
-    transform: scale(0.95) !important;
-    opacity: 0.9;
-  }
-  
-  /* 3. Remove hover transitions for mobile */
-  .card,
-  #spoilerButtonToggle,
-  #startNewGame,
-  .chosen {
-    transition: transform 0.1s ease, opacity 0.1s ease !important;
-  }
-  
-  /* 4. Fix the toggle states */
-  .card.toggled {
-    transform: scale(0.85) !important;
-  }
-  
-  /* 5. Disable animations that might cause issues */
-  #spoilerButtonToggle.active,
-  #startNewGame.active,
-  .chosen.active {
-    animation: none !important;
-  }
-  
-  /* 6. Ensure buttons don't maintain active state visually */
-  #spoilerButtonToggle,
-  #startNewGame {
-    -webkit-tap-highlight-color: transparent;
-  }
+    .cat:nth-child(even) {
+        transform: translateX(0);
+    }
 }
