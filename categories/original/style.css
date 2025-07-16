@@ -52,13 +52,14 @@ header > a > div > img {
     flex-wrap: wrap;
     align-items: flex-start;
     margin-bottom: 100px;
-    margin: 50px;
+    margin-top: 20px;
 }
 
 .board {
     display: grid;
     grid-template-columns: repeat(6, 100px);
     grid-gap: 50px;
+    margin: 10px;
 }
 
 @media (max-width: 975px) {
@@ -170,6 +171,7 @@ header > a > div > img {
     align-items: center;
     gap: 20px;
     flex-direction: column;
+    margin: 10px;
 }
 
 @media (max-width: 1369px) {
