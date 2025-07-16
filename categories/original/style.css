@@ -427,3 +427,16 @@ body.loading .card:hover {
   transform: none !important;
   box-shadow: 5px 5px 10px black !important;
 }
+
+/* Remove hover effects on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .card:hover {
+    transform: none !important;
+    box-shadow: 5px 5px 10px black !important;
+  }
+  
+  #spoilerButtonToggle:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
