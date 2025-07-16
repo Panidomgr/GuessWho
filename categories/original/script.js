@@ -1,5 +1,5 @@
 window.nonSpoilerText = "Placeholder Label";
-window.nonSpoilerImgSrc = "./../../GuessWhoLogo.png";
+window.nonSpoilerImgSrc = "./../../images/GuessWhoLogo.png";
 
 // Game state variables
 window.selectingCharacter = false;
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize chosen card display (no spoiler by default)
   const chosenCardImg = document.querySelector('#chosenCard img');
   const chosenLabel = document.getElementById('chosenLabel');
-  chosenCardImg.src = "./../../GuessWhoLogo.png";
+  chosenCardImg.src = "./../../images/GuessWhoLogo.png";
   chosenLabel.textContent = 'Placeholder Label';
   chosenLabel.classList.remove('spoiler');
   
@@ -127,7 +127,7 @@ function toggleSpoiler(forceState) {
   if (window.spoilerOn) {
     chosenLabel.textContent = 'SPOILER';
     chosenLabel.classList.add('spoiler');
-    chosenCardImg.src = "./../../GuessWhoLogo.png";
+    chosenCardImg.src = "./../../images/GuessWhoLogo.png";
   } else {
     chosenLabel.textContent = window.nonSpoilerText;
     chosenLabel.classList.remove('spoiler');
@@ -165,7 +165,7 @@ async function loadGame() {
   const chosenCardImg = chosenCard.querySelector('img');
   const chosenLabel = document.getElementById('chosenLabel');
   
-  chosenCardImg.src = "./../../GuessWhoLogo.png";
+  chosenCardImg.src = "./../../images/GuessWhoLogo.png";
   chosenLabel.textContent = 'SPOILER';
   chosenLabel.classList.add('spoiler');
   
@@ -234,13 +234,13 @@ async function startNewGame() {
   // Reset chosen card
   const chosenCard = document.getElementById('chosenCard');
   const chosenCardImg = chosenCard.querySelector('img');
-  chosenCardImg.src = "./../../GuessWhoLogo.png";
+  chosenCardImg.src = "./../../images/GuessWhoLogo.png";
   document.getElementById('chosenLabel').textContent = "Placeholder Label";
   document.getElementById('chosenLabel').classList.remove('spoiler');
   
   // Reset game state
   window.nonSpoilerText = "Placeholder Label";
-  window.nonSpoilerImgSrc = "./../../GuessWhoLogo.png";
+  window.nonSpoilerImgSrc = "./../../images/GuessWhoLogo.png";
   window.selectingCharacter = false;
   window.characterChosen = false;
   window.spoilerOn = false;
