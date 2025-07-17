@@ -224,6 +224,9 @@ async function startNewGame() {
     return;
   }
 
+  const confirmStart = confirm("Are you sure you want to start a new game?");
+  if (!confirmStart) return;
+
   window.isResetting = true;
   document.body.classList.add('resetting');
   const newGameButton = document.getElementById('startNewGame');
