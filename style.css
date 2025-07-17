@@ -42,6 +42,7 @@ main {
     padding: 10px;
     border-radius: 20px;
     overflow: hidden;
+    box-shadow: 5px 5px 10px black;
 }
 
 .cat:nth-child(odd) {
@@ -76,7 +77,7 @@ main {
 }
 
 .cat:nth-child(10n+1) {
-    background-color: var(--vibrant-coral);
+    background: var(--vibrant-coral);
 }
 
 .cat:nth-child(10n+2) {
@@ -113,6 +114,19 @@ main {
 
 .cat:nth-child(10n+10) {
     background: var(--vibrant-plum);
+}
+
+.cat:hover {
+    transition: all 0.3s ease;
+    border: 3px solid hsl(350, 100%, 25%);
+}
+
+.cat:nth-child(odd):hover {
+    transform: translateX(25px);
+}
+
+.cat:nth-child(even):hover {
+    transform: translateX(-25px);
 }
 
 .cat>a {
