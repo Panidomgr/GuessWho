@@ -139,7 +139,7 @@ main {
     gap: 50px;
     text-decoration: none;
     color: black;
-    font-size: 2em;
+    font-size: 4em;
     font-weight: bold;
     flex-wrap: wrap;
 }
@@ -153,6 +153,7 @@ main {
     max-height: 150px;
     border-radius: 15px;
     flex-shrink: 0;
+    border: 2px solid black;
 }
 
 .catImg>img {
@@ -162,9 +163,25 @@ main {
     border-radius: 15px;
 }
 
+@media (max-width: 800px) {
+    .cat>a {
+        font-size: 3em;
+    }
+}
+
+@media (max-width: 615px) {
+    .cat>a {
+        font-size: 2em;
+    }
+}
+
 @media (max-width: 220px) {
     .cat>a {
         font-size: 1em;
+    }
+
+    .cat span.details {
+        font-size: 0.7em;
     }
 
     .catImg {
@@ -191,4 +208,8 @@ main {
     .cat:nth-child(even) {
         transform: translateX(0);
     }
+}
+
+.cat span.details {
+    font-size: 0.5em;
 }
