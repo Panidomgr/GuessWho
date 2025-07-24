@@ -215,7 +215,6 @@ header>a>div>img {
   flex-direction: column;
   margin: 10px;
   max-width: 680px;
-  flex-shrink: 0;
 }
 
 @media (max-width: 1369px) {
@@ -336,6 +335,17 @@ header>a>div>img {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  text-align: center;
+}
+
+@media (max-width: 300px) {
+  #myButtons>div {
+    flex-shrink: 1;
+    aspect-ratio: 9/5;
+    width: auto;
+    height: auto;
+    position: relative;
+  }
 }
 
 #spoilerButtonToggle {
