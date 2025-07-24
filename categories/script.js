@@ -24,6 +24,9 @@ function createVideoHTML(src) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  const spoilerButton = document.getElementById('spoilerButtonToggle');
+  spoilerButton.textContent = "Spoiler Button";
+
   document.body.classList.add('loading');
   const chosenCard = document.getElementById('chosenCard');
   const chosenLabel = document.getElementById('chosenLabel');
@@ -102,8 +105,9 @@ function selectCharacter(card) {
 
   // Enable spoiler immediately without flash
   window.spoilerOn = true;
-  document.getElementById('spoilerButtonToggle').classList.add('active');
-  document.getElementById('spoilerButtonToggle').textContent = "Show Your Card!";
+  const spoilerButton = document.getElementById('spoilerButtonToggle');
+  spoilerButton.classList.add('active');
+  spoilerButton.textContent = "Show Your Card!";
 
   chosenCard.classList.remove('active');
   window.selectingCharacter = false;
@@ -182,8 +186,11 @@ async function loadGame() {
 
   // Restore toggled cards first
   const savedToggledCards = saved.toggledCards || [];
-  document.querySelectorAll('.card').forEach((c, i) => {
-    if (savedToggledCards[i]) c.classList.add('toggled');
+  document.querySelectorAll('.card').forEach(async (c, i) => {
+    if (savedToggledCards[i]) {
+      c.classList.add('toggled');
+      await new Promise(res => setTimeout(res, 100));
+    }
   });
 
   // Handle character and spoiler state
@@ -208,7 +215,7 @@ async function loadGame() {
     label.textContent = "Placeholder Label";
     label.classList.remove('spoiler');
     card.innerHTML = defaultImgHTML;
-    spoilerButton.textContent = "Hide Your Card!";
+    spoilerButton.textContent = "Spoiler Button";
     spoilerButton.classList.remove('active');
     window.spoilerOn = false;
     window.characterChosen = false;
@@ -242,7 +249,9 @@ async function startNewGame() {
   window.spoilerOn = false;
   localStorage.removeItem(saveKey);
 
-  document.getElementById('spoilerButtonToggle').classList.remove('active');
+  const spoilerButton = document.getElementById('spoilerButtonToggle');
+  spoilerButton.classList.remove('active');
+  spoilerButton.textContent = "Spoiler Button";
   document.getElementById('startNewGame').classList.remove('active');
   document.body.classList.remove('resetting');
   window.isResetting = false;
