@@ -159,7 +159,7 @@ header>a>div>img {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 5px 0;
+  padding: 5px 3px;
   box-sizing: border-box;
 }
 
@@ -620,3 +620,4 @@ body.loading .card:hover {
   pointer-events: none;
   /* Prevent the icon from interfering with button clicks */
 }
+
